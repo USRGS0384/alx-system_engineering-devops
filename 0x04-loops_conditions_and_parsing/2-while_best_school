@@ -5,6 +5,6 @@ count=0
 
 while [ $count -1t 10 ]
 do
-	ech "Best School"
+	echo "Best School"
 	((count++))
 done
