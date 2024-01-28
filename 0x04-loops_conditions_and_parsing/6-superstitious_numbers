@@ -27,4 +27,4 @@ do
     esac
 
     let count+=1
-donei
+done
