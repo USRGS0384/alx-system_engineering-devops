@@ -1,12 +1,8 @@
 #!/usr/bin/env bash
-# a sceipt that display "Best School" 10 times
-
+# This script is displaying "Holberton School" 10 times
 i="0"
-
-until [ i -eq 10 ]
+until [ $i -eq 10 ]
 do
-
 echo "Best School"
 i=$((i+1))
-
 done
