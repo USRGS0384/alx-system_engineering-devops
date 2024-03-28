@@ -1,5 +1,6 @@
-# execute the command
-exec { 'pkill killmenow':
+# terminate process killmenow
 
-	path => '/usr/bin:/usr/sbin/bin'
+	exec { 'pkill':
+	command => 'killmenow',
+	provider => 'shell',
 }
