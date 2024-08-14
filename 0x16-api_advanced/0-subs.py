@@ -1,18 +1,20 @@
 #!/usr/bin/python3
-""" script to obtain subscribers
-    count from a subreddit
-"""
-from requests import get
+""" Write a function that queries the Reddit API and prints 
+the titles of the first 10 hot posts listed for a given subreddit.
+Task 0 """
+
 
 
 def number_of_subscribers(subreddit):
-    """ function to get subscriber count"""
-    if subreddit and type(subreddit) is str:
-        subscribers = 0
-        url = 'https://reddit.com/r/{}/about.json'.format(subreddit)
-        headers = {'user-agent': 'my-app/0.0.1'}
-        req = get(url, headers=headers)
-        if req.status_code == 200:
-            data = req.json()
-            subscribers = data.get('data', {}).get('subscribers', 0)
-        return subscribers
+    """Queries the Reddit API and returns the number of subscribers
+    to the subreddit"""
+    import requests
+
+    sub_info = requests.get("https://www.reddit.com/r/{}/about.json"
+                            .format(subreddit),
+                            headers={"User-Agent": "My-User-Agent"},
+                            allow_redirects=False)
+    if sub_info.status_code >= 300:
+        return 0
+
+    return sub_info.json().get("data").get("subscribers")
