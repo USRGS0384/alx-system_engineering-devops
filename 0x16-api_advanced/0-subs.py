@@ -1,8 +1,7 @@
 #!/usr/bin/python3
-""" Write a function that queries the Reddit API and prints 
-the titles of the first 10 hot posts listed for a given subreddit.
-Task 0 """
-
+""" script to obtain subscribers
+    count from a subreddit
+"""
 from requests import get
 
 
