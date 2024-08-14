@@ -2,7 +2,7 @@
 """ script to obtain subscribers
     count from a subreddit
 """
-    subtitle_processor.py
+
 
 import requests import get
 
