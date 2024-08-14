@@ -4,7 +4,7 @@
 """
 
 
-import requests import get
+ from requests import get
 
 def process_subtitles(subtitles):
 def number_of_subscribers(subreddit):
