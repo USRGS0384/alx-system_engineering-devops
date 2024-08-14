@@ -14,6 +14,8 @@ def number_of_subscribers(subreddit):
     url = 'http://www.reddit.com/r/{}/about.json'.format(subreddit)
     headers = {'User-Agent': 'Python/1.0(Holberton School 0x16 task 0)'}
     response = requests.get(url, timeout=5)
-        return 0
+
+    if response.status_code == 200:
+    print("Successfully retrieved subtitles")
     subscriber_count = response.json().get('data').get('subscribers')
     return subscriber_count
