@@ -7,7 +7,7 @@ from requests import get
 
 def number_of_subscribers(subreddit):
     """ function to get subscriber count"""
-    if subreddit and type(subreddit) is str:
+    if subreddit and isinstance(subreddit) is str:
         subscribers = 0
         url = 'https://reddit.com/r/{}/about.json'.format(subreddit)
         headers = {'user-agent': 'my-app/0.0.1'}
