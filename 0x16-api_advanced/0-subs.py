@@ -1,16 +1,12 @@
 #!/usr/bin/python3
-""" script to obtain subscribers
+""" write a script to obtain subscribers
     count from a subreddit
 """
+from requests import get
 
 
- from requests import get
-
-def process_subtitles(subtitles):
 def number_of_subscribers(subreddit):
     """ function to get subscriber count"""
-        subtitle_processor.py
-
     if subreddit and isinstance(subreddit) is str:
         subscribers = 0
         url = 'https://reddit.com/r/{}/about.json'.format(subreddit)
