@@ -11,4 +11,5 @@ content =>"
 	identifyFile ~/.ssh/school
 	passwordAuthorization no
 	",
+
 }
