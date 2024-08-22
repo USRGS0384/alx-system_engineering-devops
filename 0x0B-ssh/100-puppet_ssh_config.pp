@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# using puppet to make changes to our cong=figuration file
+# using puppet to make changes to our congfiguration file
 
 file { 'ect/ssh/ssh_cofig':
 	ensure  => present,
@@ -10,6 +10,5 @@ content =>"
 	host*
 	indentifyfile ~/.ssh/school
 	passwordAuthorization no
-
 	",
 }
