@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # using puppet to make changes to our congfiguration file
 
-file { 'ect/ssh/ssh_config':
+file { 'ect/ssh/ssh_cofig':
 	ensure  => present,
 
 content =>"
@@ -9,7 +9,7 @@ content =>"
 	#SSH client configuration
 	host*
 	IdentifyFile ~/.ssh/school
-	PasswordAuthorization no
+	Password Authorization no
 	",
 
 }
