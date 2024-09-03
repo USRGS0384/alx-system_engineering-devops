@@ -1,43 +1,39 @@
 #!/usr/bin/python3
-"""Accessing a REST API for todo lists of employees"""
 
+"""
+Python script that exports data in the JSON format.
+"""
+
+from requests import get
 import json
-import requests
-import sys
 
+if __name__ == "__main__":
+    response = get('https://jsonplaceholder.typicode.com/todos/')
+    data = response.json()
 
-if __name__ == '__main__':
-    url = "https://jsonplaceholder.typicode.com/users"
+    row = []
+    response2 = get('https://jsonplaceholder.typicode.com/users')
+    data2 = response2.json()
 
-    response = requests.get(url)
-    users = response.json()
+    new_dict1 = {}
 
-    dictionary = {}
-    for user in users:
-        user_id = user.get('id')
-        username = user.get('username')
-        url = 'https://jsonplaceholder.typicode.com/users/{}'.format(user_id)
-        url = url + '/todos/'
-        response = requests.get(url)
-        tasks = response.json()
-        dictionary[user_id] = []
-        for task in tasks:
-            dictionary[user_id].append({
-                "task": task.get('title'),
-                "completed": task.get('completed'),
-                "username": username
-            })
+    for j in data2:
 
-            # Assuming you need to access the first command-line argument:
-        {
+        row = []
+        for i in data:
 
-if len(sys.argv) > 1:
-    argument = sys.argv[1]
-    # Use the argument here
-else:
-    print("Error: No argument provided.")
-    sys.exit(1)
-    }
+            new_dict2 = {}
 
-    with open('todo_all_employees.json', 'w') as file:
-        json.dump(dictionary, file)
+            if j['id'] == i['userId']:
+
+                new_dict2['username'] = j['username']
+                new_dict2['task'] = i['title']
+                new_dict2['completed'] = i['completed']
+                row.append(new_dict2)
+
+        new_dict1[j['id']] = row
+
+    with open("todo_all_employees.json",  "w") as f:
+
+        json_obj = json.dumps(new_dict1)
+        f.write(json_obj)
