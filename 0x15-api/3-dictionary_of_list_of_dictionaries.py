@@ -27,5 +27,17 @@ if __name__ == '__main__':
                 "completed": task.get('completed'),
                 "username": username
             })
+
+            # Assuming you need to access the first command-line argument:
+        {
+
+if len(sys.argv) > 1:
+    argument = sys.argv[1]
+    # Use the argument here
+else:
+    print("Error: No argument provided.")
+    sys.exit(1)
+    }
+
     with open('todo_all_employees.json', 'w') as file:
         json.dump(dictionary, file)
