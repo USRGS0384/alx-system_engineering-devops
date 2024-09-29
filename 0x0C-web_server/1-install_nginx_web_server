@@ -1,7 +1,5 @@
 #!/usr/bin/env bash
-# Configures a new ubuntu machine by installing
-# Nginx where it should be listening on port 80
-# Serve a page that would return a Hello World string
+# Configures web server by intsalling nginx
 
 sudo apt-get update
 sudo apt-get install nginx
@@ -11,6 +9,5 @@ echo "Hello World!" | sudo tee /var/www/html/index.html
 
 # testing nginx configurations
 sudo nginx -t
+
 sudo service nginx reload
-
-
