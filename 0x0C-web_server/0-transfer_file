@@ -16,10 +16,11 @@ username=$3
 path_to_ssh_key=$4
 
 # disabling strict host key checking
+
   scp -o "StrictHostKeyChecking=no" -i "$4path_to_ssh_key" "$path_to_file" "$username@$ip:~/"
 
   # checking if the transfer was successful
-if [ s? -eq 0 ]
+if [ $? -eq 0 ]
 then 
 	echo "FILE WAS TRANSFERED SUCCESSFULLY"
 
