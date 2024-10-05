@@ -1,9 +1,5 @@
 #!/usr/bin/env bash
-
-#+    The path to the file to be transferred.
-#+    The IP of the server to transfer the file to.
-#+    The username that scp connects with.
-#+    The path to the SSH private key that scp uses.
+# Check if the command argument in transfering files to the web server is correct
 #     By: Philip Ajuong Deng
 
 if [ $# -lt 4 ]
@@ -20,14 +16,14 @@ username=$3
 path_to_ssh_key=$4
 
 # disabling strict host key checking
-  scp -o "StrictHostKeyChecking=no" -i "$4" "$1" "$3@$2:~/"
+  scp -o "StrictHostKeyChecking=no" -i "$4path_to_ssh_key" "$path_to_file" "$username@$ip:~/"
 
   # checking if the transfer was successful
 if [ s? -eq 0 ]
 then 
-	echo "File was transfered successfully"
+	echo "FILE WAS TRANSFERED SUCCESSFULLY"
 
 else 
-	echo "File transfer has failed"
+	echo "FILE TRANSFER FAILED"
 
 fi
